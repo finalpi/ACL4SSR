@@ -1,19 +1,16 @@
-name: Merge Upstream
-on:
-  repository_dispatch:
-    types: [push]
+name: Sync Fork
 
+on:
+  push: # push 时触发, 主要是为了测试配置有没有问题
+  schedule:
+    - cron: '* */3 * * *' # 每3小时触发, 对于一些更新不那么频繁的项目可以设置为每天一次, 低碳一点
 jobs:
-  merge:
+  repo-sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Merge upstream
-        run: |
-          git remote add upstream https://github.com/ACL4SSR/ACL4SSR.git
-          git fetch upstream
-          git merge upstream/master
-          # 解决可能出现的冲突，然后提交
-          git push origin master
+      - uses: TG908/fork-sync@v1.6.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          owner: ACL4SSR # fork 的上游仓库 user
+          head: master # fork 的上游仓库 branch
+          base: master # 本地仓库 branch
