@@ -1,0 +1,19 @@
+name: Merge Upstream
+on:
+  repository_dispatch:
+    types: [push]
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Merge upstream
+        run: |
+          git remote add upstream https://github.com/ACL4SSR/ACL4SSR.git
+          git fetch upstream
+          git merge upstream/master
+          # 解决可能出现的冲突，然后提交
+          git push origin master
