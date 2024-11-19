@@ -1,25 +1,19 @@
-# 规则订阅
-rule-providers:
-  # 秋风广告拦截规则
-  # https://awavenue.top
-  # 由于 Anti-AD 误杀率高，本项目已在 1.11-241024 版本更换秋风广告规则
-  AWAvenue-Ads:
-    type: http
-    behavior: domain
-    format: yaml
-    # path可为空(仅限clash.meta 1.15.0以上版本)
-    path: ./rule_provider/AWAvenue-Ads.yaml
-    url: "https://ghp.ci/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash.yaml"
-    interval: 600
+# HTTP 代理端口
+port: 7890
 
+# SOCKS5 代理端口
+socks-port: 7891
+
+# Linux 和 macOS 的 redir 代理端口 (如需使用此功能，请取消注释)
+# redir-port: 7892
+# 设置日志输出级别 (默认级别：silent，即不输出任何内容，以避免因日志内容过大而导致程序内存溢出）。
+# 5 个级别：silent / info / warning / error / debug。级别越高日志输出量越大，越倾向于调试，若需要请自行开启。
+log-level: info
 mode: rule
 # ipv6 支持
 ipv6: true
-log-level: info
 # 允许局域网连接
 allow-lan: true
-# socks5/http 端口
-mixed-port: 7890
 # Meta 内核特性 https://wiki.metacubex.one/config/general
 # 统一延迟
 # 更换延迟计算方式,去除握手等额外延迟
