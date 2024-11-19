@@ -8,3 +8,6 @@ DOMAIN-SUFFIX,webpkgcache.com
 DOMAIN-SUFFIX,chinadigitaltimes.net
 DOMAIN-SUFFIX,voachinese.com
 DOMAIN-SUFFIX,rfi.fr
+
+# 自定义节点走自建
+DOMAIN-KEYWORD,pikpak
