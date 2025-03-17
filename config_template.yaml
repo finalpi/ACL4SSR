@@ -105,10 +105,12 @@ dns:
     - '[2402:4e00::]'
     - '[2400:3200::1]'
   nameserver:
-    - 'tls://8.8.4.4#dns'
-    - 'tls://1.0.0.1#dns'
-    - 'tls://[2001:4860:4860::8844]#dns'
-    - 'tls://[2606:4700:4700::1001]#dns'
+    - "https://1.1.1.1/dns-query"
+    - "https://104.16.132.229/dns-query"
+    - 'tls://8.8.4.4#🚀 节点选择'
+    - 'tls://1.0.0.1#🚀 节点选择'
+    - 'tls://[2001:4860:4860::8844]#🚀 节点选择'
+    - 'tls://[2606:4700:4700::1001]#🚀 节点选择'
   proxy-server-nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
@@ -122,5 +124,5 @@ dns:
     "geosite:!cn,!private": 
       - "https://1.1.1.1/dns-query"
       - "https://104.16.132.229/dns-query"
-      - "tls://dns.google"
-      - "tls://cloudflare-dns.com"
+      - "tls://dns.google#🚀 节点选择"
+      - "tls://cloudflare-dns.com#🚀 节点选择"
