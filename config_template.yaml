@@ -120,5 +120,7 @@ dns:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
     "geosite:!cn,!private": 
+      - "https://1.1.1.1/dns-query"
+      - "https://104.16.132.229/dns-query"
       - "tls://dns.google"
       - "tls://cloudflare-dns.com"
