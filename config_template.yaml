@@ -84,6 +84,13 @@ tun:
   auto-route: true
   auto-detect-interface: true
 
+# 内网穿透
+tunnels:
+- network: [tcp, udp]
+  address: 127.0.0.1:13000
+  target: 192.168.1.88:8096
+  proxy: 家里云
+
 # dns 设置
 # 已配置 ipv6
 dns:
