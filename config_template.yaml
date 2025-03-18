@@ -91,6 +91,11 @@ tunnels:
   target: 192.168.1.88:8096
   proxy: 家里云
 
+- network: [tcp, udp]
+  address: 127.0.0.1:13001
+  target: 192.168.1.180:445
+  proxy: 家里云
+
 # dns 设置
 # 已配置 ipv6
 dns:
