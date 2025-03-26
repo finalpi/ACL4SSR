@@ -139,3 +139,14 @@ dns:
       - "https://104.16.132.229/dns-query"
       - "tls://dns.google#dns"
       - "tls://cloudflare-dns.com#dns"
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    geosite:
+      - gfw
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
