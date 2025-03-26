@@ -77,7 +77,8 @@ sniffer:
 # tun 模式
 tun:
   enable: false  # enable 'true'
-  stack: system  # or 'gvisor'
+  device: utun
+  stack: gvisor  # or 'gvisor'
   dns-hijack:
     - "any:53"
     - "tcp://any:53"
