@@ -134,10 +134,10 @@ dns:
     - quic://dns.adguard.com:784#dns  # DNS over QUIC 测试
     - https://1.1.1.1/dns-query#dns
     - https://1.0.0.1/dns-query#dns
-    - tls://223.5.5.5:853##dns # DNS over TLS
-    - https://doh.pub/dns-query##dns # DNS over HTTPS
-    - https://dns.alidns.com/dns-query##dns&h3=true # 强制 HTTP/3，与 perfer-h3 无关，强制开启 DoH 的 HTTP/3 支持，若不支持将无法使用
-    - https://mozilla.cloudflare-dns.com/dns-query##dns&h3=true # 指定策略组和使用 HTTP/3
+    - tls://223.5.5.5:853#dns # DNS over TLS
+    - https://doh.pub/dns-query#dns # DNS over HTTPS
+    - https://dns.alidns.com/dns-query#dns&h3=true # 强制 HTTP/3，与 perfer-h3 无关，强制开启 DoH 的 HTTP/3 支持，若不支持将无法使用
+    - https://mozilla.cloudflare-dns.com/dns-query#dns&h3=true # 指定策略组和使用 HTTP/3
     - dhcp://en0#dns  # dns from dhcp #测试
   proxy-server-nameserver:
     - https://doh.pub/dns-query
@@ -149,8 +149,8 @@ dns:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
     geosite:!cn,!private:
-      - https://1.1.1.1/dns-query
-      - https://104.16.132.229/dns-query
+      - https://1.1.1.1/dns-query#dns
+      - https://104.16.132.229/dns-query#dns
       - tls://dns.google#dns
       - tls://cloudflare-dns.com#dns
   fallback:
