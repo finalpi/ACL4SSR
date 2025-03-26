@@ -100,50 +100,82 @@ tunnels:
 # dns 设置
 # 已配置 ipv6
 dns:
+  cache-algorithm: arc # ARC（Adaptive Replacement Cache）缓存算法
   enable: true
   listen: :1053
+  use-hosts: true
   ipv6: true
-  # 路由器个人建议使用 redir-host 以最佳兼容性
-  # 其他设备可以使用 fake-ip
+  ipv6-timeout: 300
+  prefer-h3: true
   enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
+  fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
     - '*'
     - '+.lan'
     - '+.local'
+    - '+.leigod.com'
+    - '+.vivox.com'
+    - '+.stun.+'
+    - '.n.n.srv.nintendo.net'
+    - '+.stun.playstation.net'
+    - 'xbox.*.*.microsoft.com'
+    - '*.*.xboxlive.com'
+    - 'lens.l.google.com'
+    - '*.mcdn.bilivideo.cn'
+    - 'localhost.ptlogin2.qq.com'
+    - WORKGROUP
   default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-    - 114.114.114.114
-    - '[2402:4e00::]'
-    - '[2400:3200::1]'
+    - tls://1.12.12.12:853
+    - tls://223.5.5.5:853
+    - https://223.5.5.5/dns-query 
+    - tcp://119.29.29.29
+    - tcp://223.6.6.6 
   nameserver:
-    - "https://1.1.1.1/dns-query"
-    - "https://104.16.132.229/dns-query"
-    - 'tls://8.8.4.4#dns'
-    - 'tls://1.0.0.1#dns'
-    - 'tls://[2001:4860:4860::8844]#dns'
-    - 'tls://[2606:4700:4700::1001]#dns'
+    - quic://dns.adguard.com:784#dns  # DNS over QUIC 测试
+    - https://1.1.1.1/dns-query#dns
+    - https://1.0.0.1/dns-query#dns
+    - tls://223.5.5.5:853##dns # DNS over TLS
+    - https://doh.pub/dns-query##dns # DNS over HTTPS
+    - https://dns.alidns.com/dns-query##dns&h3=true # 强制 HTTP/3，与 perfer-h3 无关，强制开启 DoH 的 HTTP/3 支持，若不支持将无法使用
+    - https://mozilla.cloudflare-dns.com/dns-query##dns&h3=true # 指定策略组和使用 HTTP/3
+    - dhcp://en0#dns  # dns from dhcp #测试
   proxy-server-nameserver:
     - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - https://doh.360.cn/dns-query
+    - tls://223.5.5.5
+    - tls://dot.pub
   nameserver-policy:
-    "geosite:cn,private":
+    geosite:cn,private:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
-    "geosite:!cn,!private": 
-      - "https://1.1.1.1/dns-query"
-      - "https://104.16.132.229/dns-query"
-      - "tls://dns.google#dns"
-      - "tls://cloudflare-dns.com#dns"
-  fallback-filter:
-    geoip: true
+    geosite:!cn,!private:
+      - https://1.1.1.1/dns-query
+      - https://104.16.132.229/dns-query
+      - tls://dns.google#dns
+      - tls://cloudflare-dns.com#dns
+  fallback:
+   #- tls://8.8.4.4
+    - quic://a.passcloud.xyz:784#dns # quic是新兴的，比tls快一倍
+    - tls://8.8.4.4:853#dns
+    - tcp://1.1.1.1#dns
+    - https://1.1.1.1/dns-query#dns&h3=true
+    - https://1.0.0.1/dns-query#dns
+    - tls://1dot1dot1dot1.cloudflare-dns.com#dns 
+  
+      
+    
+  fallback-filter:    # 国外网站使用此解析
+    geoip: true # 配置是否使用 geoip
     geoip-code: CN
-    geosite:
-      - gfw
+    geosite:      # 根据实际情况决定
+      - cn
+      
     ipcidr:
       - 240.0.0.0/4
+      
     domain:
       - '+.google.com'
       - '+.facebook.com'
       - '+.youtube.com'
+      - '+.googleapis.+'     
+
