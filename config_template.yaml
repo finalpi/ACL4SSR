@@ -84,6 +84,9 @@ tun:
     - "tcp://any:53"
   auto-route: true
   auto-detect-interface: true
+  strict-route: true # 将所有连接路由到 tun 来防止泄漏，但你的设备将无法其他设备被访问 热点将无法共享网络
+  include_android_user:
+    - 0
 
 # 内网穿透
 tunnels:
