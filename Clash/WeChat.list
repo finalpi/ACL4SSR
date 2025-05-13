@@ -1,5 +1,5 @@
 # 微信FCM推送
-DOMAIN-SUFFIX,short.weixin.qq.com
+DOMAIN-KEYWORD,short.weixin.qq.com
 DOMAIN-SUFFIX,long.weixin.qq.com
 DOMAIN-SUFFIX,dns.weixin.qq.com.cn
 # IP-CIDR,43.129.254.124/24,no-resolve
