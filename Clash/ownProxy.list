@@ -2,6 +2,6 @@
 DOMAIN-SUFFIX,windows.net
 # steam 商店需要代理
 DOMAIN-SUFFIX,steamstatic.com
-DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,store.steampowered.com
 DOMAIN-SUFFIX,steam-chat.com
 DOMAIN-SUFFIX,steamcommunity.com
