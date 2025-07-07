@@ -102,7 +102,7 @@ tunnels:
 
 - network: [tcp, udp]
   address: 127.0.0.1:13002
-  target: 192.168.1.1:80
+  target: 192.168.1.1:9090
   proxy: Home
 
 # dns 设置
