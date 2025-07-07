@@ -100,6 +100,11 @@ tunnels:
   target: 192.168.1.180:445
   proxy: Home
 
+- network: [tcp, udp]
+  address: 127.0.0.1:13002
+  target: 192.168.1.1:80
+  proxy: Home
+
 # dns 设置
 # 已配置 ipv6
 dns:
