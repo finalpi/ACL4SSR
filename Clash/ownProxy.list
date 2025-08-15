@@ -5,3 +5,5 @@ DOMAIN-SUFFIX,steamstatic.com
 DOMAIN-SUFFIX,store.steampowered.com
 DOMAIN-SUFFIX,steam-chat.com
 DOMAIN-SUFFIX,steamcommunity.com
+# vps
+DOMAIN-SUFFIX,cloudflare.com
