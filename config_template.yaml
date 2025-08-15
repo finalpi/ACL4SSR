@@ -149,14 +149,14 @@ dns:
     - tcp://119.29.29.29
     - tcp://223.6.6.6 
   nameserver:
-    - quic://dns.adguard.com:784#dns  # DNS over QUIC 测试
-    - https://1.1.1.1/dns-query#dns
-    - https://1.0.0.1/dns-query#dns
-    - tls://223.5.5.5:853#dns # DNS over TLS
-    - https://doh.pub/dns-query#dns # DNS over HTTPS
-    - https://dns.alidns.com/dns-query#dns&h3=true # 强制 HTTP/3，与 perfer-h3 无关，强制开启 DoH 的 HTTP/3 支持，若不支持将无法使用
-    - https://mozilla.cloudflare-dns.com/dns-query#dns&h3=true # 指定策略组和使用 HTTP/3
-    - dhcp://en0#dns  # dns from dhcp #测试
+    - quic://dns.adguard.com:784#DNS  # DNS over QUIC 测试
+    - https://1.1.1.1/dns-query#DNS
+    - https://1.0.0.1/dns-query#DNS
+    - tls://223.5.5.5:853#DNS # DNS over TLS
+    - https://doh.pub/dns-query#DNS # DNS over HTTPS
+    - https://dns.alidns.com/dns-query#DNS&h3=true # 强制 HTTP/3，与 perfer-h3 无关，强制开启 DoH 的 HTTP/3 支持，若不支持将无法使用
+    - https://mozilla.cloudflare-dns.com/dns-query#DNS&h3=true # 指定策略组和使用 HTTP/3
+    - dhcp://en0#DNS  # dns from dhcp #测试
   proxy-server-nameserver:
     - https://doh.pub/dns-query
     - https://doh.360.cn/dns-query
@@ -167,18 +167,18 @@ dns:
       - https://doh.pub/dns-query
       - https://dns.alidns.com/dns-query
     geosite:!cn,!private:
-      - https://1.1.1.1/dns-query#dns
-      - https://104.16.132.229/dns-query#dns
-      - tls://dns.google#dns
-      - tls://cloudflare-dns.com#dns
+      - https://1.1.1.1/dns-query#DNS
+      - https://104.16.132.229/dns-query#DNS
+      - tls://dns.google#DNS
+      - tls://cloudflare-dns.com#DNS
   fallback:
    #- tls://8.8.4.4
-    - quic://a.passcloud.xyz:784#dns # quic是新兴的，比tls快一倍
-    - tls://8.8.4.4:853#dns
-    - tcp://1.1.1.1#dns
-    - https://1.1.1.1/dns-query#dns&h3=true
-    - https://1.0.0.1/dns-query#dns
-    - tls://1dot1dot1dot1.cloudflare-dns.com#dns 
+    - quic://a.passcloud.xyz:784#DNS # quic是新兴的，比tls快一倍
+    - tls://8.8.4.4:853#DNS
+    - tcp://1.1.1.1#DNS
+    - https://1.1.1.1/dns-query#DNS&h3=true
+    - https://1.0.0.1/dns-query#DNS
+    - tls://1dot1dot1dot1.cloudflare-dns.com#DNS 
   
       
     
