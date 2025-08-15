@@ -121,7 +121,7 @@ dns:
   cache-algorithm: arc # ARC（Adaptive Replacement Cache）缓存算法
   enable: true
   listen: :1053
-  use-hosts: false
+  use-hosts: true
   ipv6: true
   ipv6-timeout: 300
   prefer-h3: true
