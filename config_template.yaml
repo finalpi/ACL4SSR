@@ -182,14 +182,13 @@ dns:
       - https://1.1.1.1/dns-query#DNS
       - https://104.16.132.229/dns-query#DNS
       - tls://dns.google#DNS
-      - tls://cloudflare-dns.com#DNS
+      - tls://1.1.1.1:853#DNS
       - https://1.0.0.1/dns-query#DNS
       - quic://dns.adguard.com:784#DNS
       - quic://a.passcloud.xyz:784#DNS # quic是新兴的，比tls快一倍
       - tls://8.8.4.4:853#DNS
       - tls://1dot1dot1dot1.cloudflare-dns.com#DNS
   fallback:
-   #- tls://8.8.4.4
     - quic://a.passcloud.xyz:784#DNS # quic是新兴的，比tls快一倍
     - tls://8.8.4.4:853#DNS
     - tcp://1.1.1.1#DNS
