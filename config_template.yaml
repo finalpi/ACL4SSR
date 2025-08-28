@@ -115,7 +115,7 @@ tunnels:
   target: 192.168.1.88:8971
   proxy: 🏠 Home
 
-# dns 设置
+# dns 设置,国外 doh,dot 大多被墙所以用代理访问，在 DNS 后面配置 #策略组，我的 DNS 策略组是 DNS 所以我配置为 #DNS
 # 已配置 ipv6
 dns:
   cache-algorithm: arc # ARC（Adaptive Replacement Cache）缓存算法
@@ -161,7 +161,6 @@ dns:
     - https://doh.pub/dns-query#DNS # DNS over HTTPS
     - https://dns.alidns.com/dns-query#DNS&h3=true # 强制 HTTP/3，与 perfer-h3 无关，强制开启 DoH 的 HTTP/3 支持，若不支持将无法使用
     - https://mozilla.cloudflare-dns.com/dns-query#DNS&h3=true # 指定策略组和使用 HTTP/3
-    - dhcp://en0#DNS  # dns from dhcp #测试
   proxy-server-nameserver:
     - https://doh.pub/dns-query
     - https://doh.360.cn/dns-query
@@ -196,19 +195,15 @@ dns:
     - tcp://1.1.1.1#DNS
     - https://1.1.1.1/dns-query#DNS&h3=true
     - https://1.0.0.1/dns-query#DNS
-    - tls://1dot1dot1dot1.cloudflare-dns.com#DNS 
-  
-      
+    - tls://1dot1dot1dot1.cloudflare-dns.com#DNS
     
   fallback-filter:    # 国外网站使用此解析
     geoip: true # 配置是否使用 geoip
     geoip-code: CN
     geosite:      # 根据实际情况决定
-      - cn
-      
+      - gfw
     ipcidr:
       - 240.0.0.0/4
-      
     domain:
       - '+.google.com'
       - '+.facebook.com'
