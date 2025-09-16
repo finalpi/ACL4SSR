@@ -2,3 +2,13 @@ DOMAIN-SUFFIX,hxcy.top
 DOMAIN-SUFFIX,acgrip.com
 DOMAIN-SUFFIX,jmzj.us
 DOMAIN-SUFFIX,18comic.vip
+
+# DNS
+DST-IP,1.1.1.1
+DST-IP,1.0.0.1
+DOMAIN-SUFFIX,cloudflare-dns.com
+DOMAIN-SUFFIX,dns.google
+DST-IP,8.8.4.4
+DOMAIN-SUFFIX,dns.nextdns.io
+DOMAIN-SUFFIX,dns.adguard.com
+DST-IP,104.16.132.229
