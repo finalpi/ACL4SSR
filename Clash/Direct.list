@@ -1,4 +1,4 @@
-DOMAIN-KEYWORD,stun
+# DOMAIN-KEYWORD,stun
 DOMAIN-SUFFIX,servicetrial.com
 DOMAIN-SUFFIX,gofile.io
 DST-PORT,22
