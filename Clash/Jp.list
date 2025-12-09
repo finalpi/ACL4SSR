@@ -1,6 +1,7 @@
 DOMAIN-SUFFIX,dlsite.com
 
 # AI
+DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,openai
 DOMAIN,gemini.google.com
 DOMAIN-SUFFIX,auth0.com
